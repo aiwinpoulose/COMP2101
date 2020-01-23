@@ -32,7 +32,7 @@ echo""
 #####################################
 echo "Ten largest files:"
 echo "============="
-find / 2>/dev/null  -type f -exec ls -alh --block-size=M {} +| sort -hr -k5 | head|awk '{print $3,$5,$9}'
+find / 2>/dev/null  -type f -exec ls -lsh --block-size=M {} +| sort -nr | head|awk '{print $3,$5,$9}'
 ######################################
 echo""
 

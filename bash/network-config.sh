@@ -45,6 +45,7 @@ rHostname=$(getent hosts 127.0.0.1 | awk '{print $2}')
 
 cat <<EOF
 Hostname        : $fHostname
+INTERFACE Facename : $iFacename
 LAN Address     : $lAddress
 LAN Hostname    : $lHostname
 External IP     : $eIp

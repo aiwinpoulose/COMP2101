@@ -17,44 +17,66 @@
 ###############
 # Variables   #
 ###############
-name="$USER"
-USER="$USER"
+
+USER=$USER
 hostname=$(hostname)
 
 #Findng the day and date
 date=$(date +'%I:%M %p')
 day=$(date +%A)
+weekday=$(date +%u)
+
 
 ###############
 # Main        #
 ###############
-cat <<EOF
-if [ "$day" == "Monday" ]
-then
-Welcome to Earth $hostname, creative $name!
-else
-if [ "$day" == "Tuesday" ]
-then
-Welcome to Earth $hostname, intelligent $name!
-else
-if [ "$day" == "Wednesday" ]
-then
-Welcome to Earth $hostname, beautiful  $name!
-else
-if [ "$day" ==  "Thursday" ]
-then
-Welcome to Earth $hostname, perfectionist $name!
-else
-if [ "$day" == "Friday" ]
-then
-Welcome to Earth $hostname, impressionistic $name!
-else
-if [ "$day" == "Saturday" ]
-then
-Welcome to Earth $hostname, energetic $name!
-else
-Welcome to Earth $hostname, enthusiastic $name!
-EOF
 
-#display time and date
-datime =((echo "It is $date on $day ."))
+#finding weekday or not
+
+echo
+if [ "$weekday" = "6" ] || [ "$weekday" = "7" ]
+then
+   echo "It is $NOW on Weekend."
+else
+   echo "It is $day on Weekday."
+fi
+
+#describing a person
+if [ "$day" = "Monday" ]
+then
+  title="creative"
+else
+if [ "$day" = "Tuesday" ]
+then
+  title="intelligent"
+else
+  if [ "$day" = "Wednesday" ]
+  then
+    title="perfectionist"
+else
+  if [ "$day" = "Thursday" ]
+  then
+    title="smart"
+else
+  if [ "$day" = "Friday" ]
+  then
+    title="energetic"
+else
+  if [ "$day" = "Saturday" ]
+  then
+    title="enthusiastic"
+else
+  if [ "$day" = "Sunday" ]
+  then
+    title="kind"
+fi
+fi
+fi
+fi
+fi
+fi
+fi
+cat <<EOF
+
+Welcome to planet $hostname, "$title $USER!"
+EOF

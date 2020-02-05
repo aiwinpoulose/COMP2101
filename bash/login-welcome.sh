@@ -77,6 +77,7 @@ fi
 fi
 fi
 cat <<EOF
-
-Welcome to planet $hostname, "$title $USER!"
+Welcome to planet $hostname $title $USER
 EOF
+cowsay  Welcome to planet $hostname $title $USER
+
